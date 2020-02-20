@@ -45,9 +45,7 @@ public class RNLockDetectionModule extends ReactContextBaseJavaModule {
         KeyguardManager myKM = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
 
         if (strAction.equals(Intent.ACTION_SCREEN_OFF)) {
-          if (myKM.inKeyguardRestrictedInputMode()) {
             sendEvent("phoneLocked", "LOCKED");
-          } 
         }
 
         if (strAction.equals(Intent.ACTION_SCREEN_ON)) {
